@@ -1,0 +1,1 @@
+Inside this repository and as a name suggests, Dsa problems I am uploading. DSA is not only submitting question Its about how you solved problem within less memory and less time. Its give you problem solving mindset and helping n no. of software engineer in day to day life.
