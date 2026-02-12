@@ -1,0 +1,380 @@
+🔹 What is an Array in Java?
+An array in Java is a collection of similar type elements stored in continuous memory locations and accessed using an index.
+
+👉 Simple words:
+An array stores multiple values in one variable instead of creating many variables.
+
+🔹 Why do we need arrays?
+Imagine storing marks of 5 students.
+
+❌ Without array:
+int m1, m2, m3, m4, m5;
+
+✅ With array:
+int[] marks = new int[5];
+
+✔ Cleaner
+✔ Easier to manage
+✔ Loop-friendly
+
+🔹 Key properties of Arrays
+1️⃣ Same data type
+int[] a;      // valid
+int[] a = {1, "abc"};  // ❌ invalid
+
+
+2️⃣ Fixed size
+Once created, size cannot change.
+
+3️⃣ Index-based
+Index starts from 0
+Last index = length - 1
+
+a[0] → first element  
+a[a.length - 1] → last element
+
+
+4️⃣ Stored in continuous memory (important for exams 💡)
+
+🔹 Array Declaration, Creation & Initialization
+1️⃣ Declaration
+int[] arr;
+
+2️⃣ Creation
+arr = new int[5];
+
+3️⃣ Initialization
+arr[0] = 10;
+arr[1] = 20;
+
+
+👉 OR all together:
+
+int[] arr = {10, 20, 30, 40};
+
+🔹 Accessing Array Elements
+System.out.println(arr[2]); // prints 30
+
+🔹 Traversing an Array (very important)
+Using for loop:
+
+for(int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
+
+Using for-each loop:
+for(int x : arr) {
+    System.out.println(x);
+}
+
+🔹 Types of Arrays in Java
+1️⃣ 1D Array
+int[] a = new int[5];
+
+
+2️⃣ 2D Array (Matrix)
+int[][] a = new int[3][3];
+
+
+3️⃣ 3D Array
+int[][][] a = new int[2][3][4];
+
+🔹 Important Interview Points ⭐
+Array is an object in Java
+Stored in heap memory
+length is a property, not a method
+Default values:
+int → 0
+double → 0.0
+boolean → false
+object → null
+
+🔹 Real-life example
+📦 Array = Box with numbered compartments
+[0] [1] [2] [3]
+ 10  20  30  40
+ 
+ 
+ 🔥 ARRAY METHODS / PATTERNS IN DSA
+✅ 1. Traversal Pattern
+Most basic – foundation of all array problems
+👉 Visit each element once.
+
+Use cases:
+Print array
+Find sum
+Count even/odd
+Find max/min
+
+⏱ Time: O(n)
+🧠 Example thinking:
+“Check every element exactly once”
+
+✅ 2. Searching Patterns
+🔹 a) Linear Search
+Check one by one
+Works on unsorted array
+⏱ O(n)
+
+🔹 b) Binary Search
+Only for sorted arrays
+Divide and conquer
+⏱ O(log n)
+
+✅ 3. Two Pointer Pattern ⭐⭐⭐ (VERY IMPORTANT)
+Use two indexes instead of one.
+
+📌 Types:
+Start–End pointers
+Slow–Fast pointers
+
+Use cases:
+Reverse array
+Pair sum
+Remove duplicates
+Move zeros
+Palindrome check
+
+🧠 Thinking:
+“Can I solve this by moving two pointers?”
+
+✅ 4. Sliding Window Pattern ⭐⭐⭐
+Used when dealing with subarrays / ranges
+📌 Fixed window
+📌 Variable window
+
+Use cases:
+Max sum subarray of size K
+Longest subarray with condition
+Count subarrays
+
+⏱ Optimizes O(n²) → O(n)
+🧠 Thinking:
+“Do I need continuous elements?”
+
+✅ 5. Prefix Sum Pattern
+Pre-calculate sums to answer queries fast.
+
+Use cases:
+Range sum queries
+Subarray sum equals K
+Equilibrium index
+
+🧠 Thinking:
+“Can I reuse previous calculations?”
+
+✅ 6. Sorting-based Pattern
+First sort the array, then solve.
+
+Use cases:
+Find duplicates
+Kth smallest/largest
+Pair problems
+
+⏱ Sorting: O(n log n)
+
+⚠️ Tradeoff:
+Time vs simplicity
+
+✅ 7. Hashing Pattern
+Use extra space for fast lookup.
+Use cases:
+Frequency count
+First non-repeating element
+Pair sum
+Duplicates
+
+⏱ Time: O(n)
+📦 Space: O(n)
+
+🧠 Thinking:
+“I need fast search, space is okay”
+
+✅ 8. Kadane’s Algorithm (Special Pattern)
+For maximum subarray sum
+⏱ O(n)
+Very popular in interviews 🔥
+
+✅ 9. Cyclic Sort Pattern
+Used when elements are in a range (1…n)
+Use cases:
+Missing number
+Duplicate number
+First missing positive
+
+⏱ O(n)
+🧠 Thinking:
+“Every element has a correct position”
+
+✅ 10. In-place Modification Pattern
+Modify array without extra space
+
+Use cases:
+Rotate array
+Reverse
+Remove duplicates
+⏱ O(1) space
+
+✅ 11. Matrix / 2D Array Patterns
+Special for 2D arrays
+
+Patterns include:
+Row-wise / column-wise traversal
+Boundary traversal
+Spiral traversal
+Diagonal traversal
+Transpose
+
+✅ 12. Divide & Conquer Pattern
+Break problem into subproblems.
+
+Use cases:
+Binary search
+Merge sort
+Quick sort
+
+
+🔹 1. Traversal Pattern (Basics – foundation)
+1️⃣ Find sum of array
+2️⃣ Find maximum element
+3️⃣ Find minimum element
+4️⃣ Count even and odd numbers
+5️⃣ Count positive, negative, zero
+6️⃣ Print array in reverse
+7️⃣ Find average of elements
+8️⃣ Check if array is sorted
+9️⃣ Find second largest element
+🔟 Count frequency of a given element
+
+🔹 2. Linear Search Pattern
+1️⃣ Search an element in array
+2️⃣ Find index of element
+3️⃣ Check if element exists
+4️⃣ Find first occurrence
+5️⃣ Find last occurrence
+6️⃣ Count occurrences of a value
+7️⃣ Search in unsorted array
+8️⃣ Find missing element (simple way)
+9️⃣ Find duplicate (brute force)
+🔟 Find common elements in two arrays
+
+🔹 3. Binary Search Pattern (Sorted Array)
+1️⃣ Binary search (iterative)
+2️⃣ Binary search (recursive)
+3️⃣ Find first occurrence
+4️⃣ Find last occurrence
+5️⃣ Count occurrences
+6️⃣ Find floor of an element
+7️⃣ Find ceil of an element
+8️⃣ Search in rotated sorted array
+9️⃣ Find minimum in rotated array
+🔟 Peak element in array
+
+🔹 4. Two Pointer Pattern ⭐
+1️⃣ Reverse an array
+2️⃣ Check palindrome
+3️⃣ Pair with given sum (sorted array)
+4️⃣ Remove duplicates from sorted array
+5️⃣ Move all zeros to end
+6️⃣ Separate even and odd numbers
+7️⃣ Merge two sorted arrays
+8️⃣ Square sorted array
+9️⃣ Sort array of 0s, 1s, 2s
+🔟 Trapping rain water
+
+🔹 5. Sliding Window Pattern ⭐
+1️⃣ Maximum sum subarray of size K
+2️⃣ Minimum sum subarray of size K
+3️⃣ Average of subarrays of size K
+4️⃣ First negative number in every window
+5️⃣ Count subarrays of size K
+6️⃣ Maximum of all subarrays of size K
+7️⃣ Longest subarray with sum K
+8️⃣ Smallest subarray with sum ≥ K
+9️⃣ Longest subarray with at most K distinct elements
+🔟 Subarray with given sum
+
+🔹 6. Prefix Sum Pattern
+1️⃣ Range sum queries
+2️⃣ Find equilibrium index
+3️⃣ Subarray sum equals K
+4️⃣ Count subarrays with sum 0
+5️⃣ Find longest subarray with sum K
+6️⃣ Difference array technique
+7️⃣ Maximum occurring element in ranges
+8️⃣ Check if array can be split equally
+9️⃣ Find pivot index
+🔟 Continuous subarray sum
+
+🔹 7. Hashing Pattern ⭐
+1️⃣ Frequency of elements
+2️⃣ First non-repeating element
+3️⃣ Two sum problem
+4️⃣ Find duplicates
+5️⃣ Count distinct elements
+6️⃣ Intersection of two arrays
+7️⃣ Union of two arrays
+8️⃣ Subarray with sum zero
+9️⃣ Longest consecutive sequence
+🔟 Majority element
+
+🔹 8. Sorting-Based Pattern
+1️⃣ Sort an array
+2️⃣ Kth smallest element
+3️⃣ Kth largest element
+4️⃣ Find duplicates after sorting
+5️⃣ Merge intervals
+6️⃣ Minimum number of platforms
+7️⃣ Chocolate distribution problem
+8️⃣ Minimum difference pair
+9️⃣ Sort array by parity
+🔟 Relative sorting
+
+🔹 9. Kadane’s Algorithm Pattern
+1️⃣ Maximum subarray sum
+2️⃣ Print maximum subarray
+3️⃣ Maximum circular subarray sum
+4️⃣ Maximum product subarray
+5️⃣ Minimum subarray sum
+6️⃣ Largest sum contiguous subarray
+7️⃣ Maximum absolute subarray sum
+8️⃣ Longest subarray with positive sum
+9️⃣ Maximum sum subarray of size ≥ K
+🔟 Best time to buy and sell stock
+
+🔹 10. Cyclic Sort Pattern
+1️⃣ Find missing number
+2️⃣ Find duplicate number
+3️⃣ Find all duplicates
+4️⃣ Find all missing numbers
+5️⃣ First missing positive
+6️⃣ Set mismatch
+7️⃣ Find corrupt pair
+8️⃣ Missing numbers in range
+9️⃣ Smallest missing positive number
+🔟 Find repeating and missing number
+
+🔹 11. In-Place Array Manipulation
+1️⃣ Rotate array left
+2️⃣ Rotate array right
+3️⃣ Reverse array in groups
+4️⃣ Remove duplicates in-place
+5️⃣ Move negatives to one side
+6️⃣ Replace elements with next greatest
+7️⃣ Rearrange array alternatively
+8️⃣ Shuffle array
+9️⃣ Compress array
+🔟 Modify array to product of itself
+
+🔹 12. 2D / Matrix Array Pattern
+1️⃣ Row-wise traversal
+2️⃣ Column-wise traversal
+3️⃣ Boundary traversal
+4️⃣ Spiral traversal
+5️⃣ Diagonal traversal
+6️⃣ Transpose matrix
+7️⃣ Rotate matrix 90°
+8️⃣ Search in sorted matrix
+9️⃣ Print upper triangular matrix
+🔟 Print lower triangular matrix

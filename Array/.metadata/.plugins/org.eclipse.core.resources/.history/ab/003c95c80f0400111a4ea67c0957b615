@@ -1,0 +1,41 @@
+package practice;
+
+import java.util.Arrays;
+
+public class Practice {
+
+	public static void main(String[] args) {
+
+		/*
+			1️⃣ Reverse an array
+			2️⃣ Check palindrome
+			3️⃣ Pair with given sum (sorted array)
+			4️⃣ Remove duplicates from sorted array
+			5️⃣ Move all zeros to end
+			6️⃣ Separate even and odd numbers
+			7️⃣ Merge two sorted arrays
+			8️⃣ Square sorted array
+			9️⃣ Sort array of 0s, 1s, 2s
+			🔟 Trapping rain water
+		 */
+
+		int[] arr = {3,4,1,40,3};
+		int k = 41;
+
+		int left = 0,,right = arr.length-1;
+
+		wwhile (left < right) {
+			int sum = arr[left]+arr[right];
+			if(sum == k) {
+				System.out.println("Sum found"+left+","+right);
+				return;
+			}else if(sum < k) {
+				right--;
+			}else {
+				left++;
+			}
+		}
+
+	}
+
+}

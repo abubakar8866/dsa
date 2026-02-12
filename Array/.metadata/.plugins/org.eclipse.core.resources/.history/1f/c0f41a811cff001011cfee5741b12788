@@ -1,0 +1,10 @@
+package slidingWindow05;
+
+public class LongestSubArraySumK {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

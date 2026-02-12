@@ -1,0 +1,45 @@
+package slidingWindow05;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+public class FirstNegativeNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = { 12, -1, -7, 8, -15, 30, 16, 28 };
+		int k = 3;
+	
+		Queue<Integer> queue = new LinkedList<>();
+		List<Integer> list = new ArrayList<Integer>();
+		
+		for (int i = 0; i < arr.length; i++) {
+			
+			//add negative index
+			if (arr[i] < 0) {
+				queue.add(i);
+			}
+			
+			//remove nnon-window index from queue
+			if(!queue.isEmpty() && queue.peek() <= i-k) {
+				queue.poll();
+			}
+			
+			//Window formed
+			if(i >= k-1) {
+				if(!queue.isEmpty()) {
+					list.add(arr[queue.peek()]);
+				}else {
+					list.add(0);
+				}
+			}
+			
+		}
+		
+		System.out.println(list);
+
+	}
+
+}

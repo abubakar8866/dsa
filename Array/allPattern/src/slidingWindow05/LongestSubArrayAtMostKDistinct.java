@@ -1,0 +1,36 @@
+package slidingWindow05;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class LongestSubArrayAtMostKDistinct {
+
+	public static void main(String[] args) {
+		// Maximum distinct continuous distinct element but less than k(at most k) 
+		int[] arr = { 1, 3, 3, 3, 5, 3, 3 };
+		int k = 2;
+
+		Map<Integer, Integer> freq = new HashMap<Integer, Integer>();
+		int left = 0, maxLen = 0;
+
+		for (int right = 0; right < arr.length; right++) {
+
+			freq.put(arr[right], freq.getOrDefault(arr[right], 0) + 1);
+
+			while (freq.size() > k) {
+				freq.put(arr[left], freq.get(arr[left]) - 1);
+				if (freq.get(arr[left]) == 0) {
+					freq.remove(arr[left]);
+				}
+				left++;
+			}
+
+			maxLen = Math.max(maxLen, right - left + 1);
+
+		}
+
+		System.out.println(maxLen);
+
+	}
+
+}

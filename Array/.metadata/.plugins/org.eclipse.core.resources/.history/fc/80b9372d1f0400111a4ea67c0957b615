@@ -1,0 +1,44 @@
+package practice;
+
+import java.util.Arrays;
+
+public class Practice {
+
+	public static void main(String[] args) {
+
+		/*
+			1️⃣ Reverse an array
+			2️⃣ Check palindrome
+			3️⃣ Pair with given sum (sorted array)
+			4️⃣ Remove duplicates from sorted array
+			5️⃣ Move all zeros to end
+			6️⃣ Separate even and odd numbers
+			7️⃣ Merge two sorted arrays
+			8️⃣ Square sorted array
+			9️⃣ Sort array of 0s, 1s, 2s
+			🔟 Trapping rain water
+		 */
+
+		int[] arr = {-4, -1, 0, 3, 10};
+		int n = arr.length;
+		int left = 0,right = n-1;
+		int[]res = new int[n];
+		int idx = n-1;
+		
+		while(left <= right) {
+			if(Math.abs(arr[left]) > Math.abs(arr[right])) {
+				res[idx] = arr[left] * arr[left];
+				idx--;
+				left++;
+			}else {
+				res[idx] = arr[right] * arr[right];
+				right--;
+				idx--;
+			}
+		}
+		
+		System.out.println(Arrays.toString(res));
+		
+	}
+
+}
